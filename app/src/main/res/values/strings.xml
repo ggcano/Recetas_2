@@ -1,0 +1,7 @@
+<resources>
+    <string name="app_name">Recetas_2</string>
+    <string name="search_hint">Buscar comidas (ej: pasta, arroz)...</string>
+    <string name="empty_query_error">Ingresa un término de búsqueda</string>
+    <string name="no_results">No hay resultados para \'%s\'</string>
+    <string name="search_error_word">No se ha encontrado el producto deseado</string>
+</resources>
