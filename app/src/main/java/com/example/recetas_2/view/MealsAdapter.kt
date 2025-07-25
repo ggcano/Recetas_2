@@ -10,6 +10,12 @@ import com.example.recetas_2.model.Meal
 
 class MealsAdapter : RecyclerView.Adapter<MealsAdapter.MealViewHolder>() {
     private var meals = emptyList<Meal>()
+    private var onItemClickListener: ((String) -> Unit)? = null
+
+
+    fun setOnItemClickListener(listener: (String) -> Unit) {
+        onItemClickListener = listener
+    }
 
     fun submitList(newList: List<Meal>) {
         meals = newList
@@ -33,11 +39,17 @@ class MealsAdapter : RecyclerView.Adapter<MealsAdapter.MealViewHolder>() {
 
     inner class MealViewHolder(private val binding: ItemMealBinding) :
         RecyclerView.ViewHolder(binding.root) {
+
         fun bind(meal: Meal) {
             binding.textMealName.text = meal.name
             Glide.with(binding.root)
                 .load(meal.thumbnail)
                 .into(binding.imageMeal)
+
+            // Configurar el click listener en el CardView o ConstraintLayout
+            binding.root.setOnClickListener {
+                onItemClickListener?.invoke(meal.id)
+            }
         }
     }
 }

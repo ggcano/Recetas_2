@@ -11,6 +11,12 @@ interface MealApiService {
         @Query("s") query: String
     ): Response<MealResponse>
 
+    @GET("lookup.php")
+    suspend fun detailsMeals(
+        @Query("i") query: String
+    ): Response<MealResponse>
+
+
     companion object {
         const val BASE_URL = "https://www.themealdb.com/api/json/v1/1/"
     }

@@ -20,4 +20,13 @@ class MealRepository {
             emptyList()
         }
     }
+
+    suspend fun detailMeals(query: String): List<Meal> {
+        val response = api.detailsMeals(query)
+        return if (response.isSuccessful) {
+            response.body()?.meals ?: emptyList()
+        } else {
+            emptyList()
+        }
+    }
 }

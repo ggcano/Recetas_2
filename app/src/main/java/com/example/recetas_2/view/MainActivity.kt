@@ -1,5 +1,6 @@
 package com.example.recetas_2.view
 
+import android.content.Intent
 import android.os.Bundle
 import android.widget.SearchView
 import android.widget.Toast
@@ -25,6 +26,7 @@ class MainActivity : AppCompatActivity() {
         setupRecyclerView()
         setupSearch()
         observeData()
+        goToDetail()
     }
 
     private fun observeData() {
@@ -73,6 +75,17 @@ class MainActivity : AppCompatActivity() {
         binding.recyclerView.apply {
             layoutManager = LinearLayoutManager(this@MainActivity)
             adapter = MealsAdapter()
+        }
+    }
+
+    private fun goToDetail(){
+        val adapter = MealsAdapter()
+        binding.recyclerView.adapter = adapter
+        adapter.setOnItemClickListener { idMeal ->
+            val intent = Intent(this, DetailActivity::class.java).apply {
+                putExtra("MEAL_ID", idMeal)
+            }
+            startActivity(intent)
         }
     }
 }
