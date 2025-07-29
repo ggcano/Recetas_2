@@ -1,13 +1,14 @@
-package com.example.recetas_2.view
+package com.example.recetas_2.presentation.view
 
 import android.content.Intent
 import android.os.Bundle
+import android.view.View
 import android.widget.SearchView
 import android.widget.Toast
 import androidx.activity.viewModels
 import androidx.appcompat.app.AppCompatActivity
 import androidx.recyclerview.widget.LinearLayoutManager
-import com.example.recetas_2.viewmodel.MainViewModel
+import com.example.recetas_2.presentation.MainViewModel
 import com.example.recetas_2.R
 import com.example.recetas_2.databinding.ActivityMainBinding
 
@@ -30,6 +31,10 @@ class MainActivity : AppCompatActivity() {
     }
 
     private fun observeData() {
+        viewModel.loading.observe(this) { isLoading ->
+            binding.progressBarMain.visibility = if (isLoading) View.VISIBLE else View.GONE
+            binding.editTextSearchMain.isEnabled = !isLoading
+        }
         viewModel.meals.observe(this) {
             // Actualizar RecyclerView
             (binding.recyclerView.adapter as MealsAdapter).submitList(it)

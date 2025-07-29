@@ -4,4 +4,6 @@
     <string name="empty_query_error">Ingresa un término de búsqueda</string>
     <string name="no_results">No hay resultados para \'%s\'</string>
     <string name="search_error_word">No se ha encontrado el producto deseado</string>
+    <string name="search_your_favourite_food">Search your favourite food</string>
+    <string name="search">Search</string>
 </resources>

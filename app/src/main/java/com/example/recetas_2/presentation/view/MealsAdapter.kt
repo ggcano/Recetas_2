@@ -1,4 +1,4 @@
-package com.example.recetas_2.view
+package com.example.recetas_2.presentation.view
 
 import android.view.LayoutInflater
 import android.view.ViewGroup
@@ -6,7 +6,7 @@ import androidx.recyclerview.widget.RecyclerView
 import com.bumptech.glide.Glide
 
 import com.example.recetas_2.databinding.ItemMealBinding
-import com.example.recetas_2.model.Meal
+import com.example.recetas_2.data.model.Meal
 
 class MealsAdapter : RecyclerView.Adapter<MealsAdapter.MealViewHolder>() {
     private var meals = emptyList<Meal>()

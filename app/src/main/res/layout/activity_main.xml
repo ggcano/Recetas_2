@@ -5,14 +5,15 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".view.MainActivity">
+    tools:context=".presentation.view.MainActivity">
 
     <TextView
         android:id="@+id/text_title_main"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="Busca Alguna Comida"
-        android:textSize="20sp"
+        android:layout_marginTop="16dp"
+        android:text="@string/search_your_favourite_food"
+        android:textSize="24sp"
         android:textStyle="bold"
         app:layout_constraintLeft_toLeftOf="parent"
         app:layout_constraintRight_toRightOf="parent"
@@ -20,12 +21,12 @@
 
     <Button
         android:id="@+id/button_action_main"
-        android:layout_width="wrap_content"
+        android:layout_width="0dp"
         android:layout_height="wrap_content"
         android:layout_marginStart="16dp"
         android:layout_marginEnd="16dp"
-        android:layout_marginBottom="8dp"
-        android:text="Buscar"
+        android:layout_marginBottom="16dp"
+        android:text="@string/search"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent" />
@@ -34,6 +35,8 @@
         android:id="@+id/edit_text_search_main"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        android:layout_marginStart="16dp"
+        android:layout_marginEnd="16dp"
         android:iconifiedByDefault="false"
         android:queryHint="search"
         app:layout_constraintEnd_toEndOf="parent"
@@ -50,5 +53,16 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/edit_text_search_main" />
+
+    <ProgressBar
+        android:id="@+id/progressBar_main"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center"
+        android:visibility="gone"
+        app:layout_constraintBottom_toBottomOf="@+id/recycler_view"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="@+id/recycler_view" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>

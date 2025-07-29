@@ -1,7 +1,7 @@
 package com.example.recetas_2.data
 
 import com.example.recetas_2.data.MealApiService.Companion.BASE_URL
-import com.example.recetas_2.model.Meal
+import com.example.recetas_2.data.model.Meal
 import retrofit2.Retrofit
 import retrofit2.converter.gson.GsonConverterFactory
 
