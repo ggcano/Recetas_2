@@ -1,6 +1,8 @@
 plugins {
     alias(libs.plugins.android.application)
     alias(libs.plugins.kotlin.android)
+    alias(libs.plugins.ksp)
+    alias(libs.plugins.hilt.android)
 }
 
 android {
@@ -90,5 +92,19 @@ dependencies {
     implementation("androidx.lifecycle:lifecycle-viewmodel-ktx:2.6.2")
     implementation("androidx.lifecycle:lifecycle-livedata-ktx:2.6.2")
     implementation("com.github.bumptech.glide:glide:4.14.2")
+
+    testImplementation ("junit:junit:4.13.2")
+
+    testImplementation ("androidx.arch.core:core-testing:2.1.0")
+
+    testImplementation("org.mockito:mockito-core:4.5.1")
+
+    testImplementation ("org.mockito.kotlin:mockito-kotlin:4.1.0")
+
+    testImplementation ("org.jetbrains.kotlinx:kotlinx-coroutines-test:1.6.4")
+
+
+    implementation(libs.google.hilt.android)
+    ksp(libs.hilt.compiler)
 
 }

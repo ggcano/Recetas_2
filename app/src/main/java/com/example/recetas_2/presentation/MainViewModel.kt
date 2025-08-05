@@ -12,11 +12,17 @@ import com.example.recetas_2.data.MealRepository
 import com.example.recetas_2.data.model.Meal
 import com.example.recetas_2.usecase.DetailMealUseCase
 import com.example.recetas_2.usecase.SearchMealsUseCase
+import dagger.hilt.android.lifecycle.HiltViewModel
 import kotlinx.coroutines.launch
 import java.util.regex.Pattern
+import javax.inject.Inject
 
-class MainViewModel : ViewModel() {
-    private val repository = MealRepository()
+@HiltViewModel
+class MainViewModel
+@Inject
+constructor(private val repository: MealRepository) : ViewModel() {
+
+
     private val searchMealsUseCase = SearchMealsUseCase(repository)
     private val detailMealUseCase = DetailMealUseCase(repository)
     private val _loading = MutableLiveData<Boolean>(false)

@@ -1,16 +1,13 @@
 package com.example.recetas_2.data
 
-import com.example.recetas_2.data.MealApiService.Companion.BASE_URL
 import com.example.recetas_2.data.model.Meal
-import retrofit2.Retrofit
-import retrofit2.converter.gson.GsonConverterFactory
+import javax.inject.Inject
 
-class MealRepository {
-    private val api = Retrofit.Builder()
-        .baseUrl(BASE_URL)
-        .addConverterFactory(GsonConverterFactory.create())
-        .build()
-        .create(MealApiService::class.java)
+
+class MealRepository
+@Inject
+constructor(val api: ApiServiceImpl) {
+
 
     suspend fun searchMeals(query: String): List<Meal> {
         val response = api.searchMeals(query)

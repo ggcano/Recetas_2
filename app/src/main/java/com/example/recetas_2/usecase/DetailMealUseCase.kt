@@ -3,8 +3,13 @@ package com.example.recetas_2.usecase
 import com.example.recetas_2.data.MealRepository
 import com.example.recetas_2.data.model.Meal
 import com.example.recetas_2.presentation.Result
+import javax.inject.Inject
+import javax.inject.Singleton
 
-class DetailMealUseCase(private val repository: MealRepository) {
+@Singleton
+class DetailMealUseCase @Inject constructor(
+    private val repository: MealRepository
+) {
     suspend operator fun invoke(query: String): Result<Meal> {
         return try {
             val result = repository.detailMeals(query)

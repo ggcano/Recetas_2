@@ -3,8 +3,13 @@ package com.example.recetas_2.usecase
 import com.example.recetas_2.data.MealRepository
 import com.example.recetas_2.data.model.Meal
 import com.example.recetas_2.presentation.Result
+import javax.inject.Inject
+import javax.inject.Singleton
 
-class SearchMealsUseCase(private val repository: MealRepository) {
+@Singleton
+class SearchMealsUseCase @Inject constructor(
+    private val repository: MealRepository
+) {
     suspend operator fun invoke(query: String): Result<List<Meal>> {
         return try {
             if (query.isBlank()) {

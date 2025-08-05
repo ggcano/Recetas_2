@@ -10,7 +10,11 @@ import com.bumptech.glide.Glide
 import com.example.recetas_2.R
 import com.example.recetas_2.databinding.ActivityDetailBinding
 import com.example.recetas_2.presentation.MainViewModel
+import dagger.hilt.android.AndroidEntryPoint
+import dagger.hilt.android.scopes.ActivityRetainedScoped
 
+@ActivityRetainedScoped
+@AndroidEntryPoint
 class DetailActivity : AppCompatActivity() {
 
     private lateinit var binding: ActivityDetailBinding
