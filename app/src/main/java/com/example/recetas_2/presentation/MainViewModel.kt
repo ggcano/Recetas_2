@@ -9,6 +9,7 @@ import androidx.lifecycle.MutableLiveData
 import androidx.lifecycle.ViewModel
 import androidx.lifecycle.viewModelScope
 import com.example.recetas_2.data.MealRepository
+import com.example.recetas_2.data.Result
 import com.example.recetas_2.data.model.Meal
 import com.example.recetas_2.usecase.DetailMealUseCase
 import com.example.recetas_2.usecase.SearchMealsUseCase

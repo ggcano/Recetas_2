@@ -2,7 +2,7 @@ package com.example.recetas_2.usecase
 
 import com.example.recetas_2.data.MealRepository
 import com.example.recetas_2.data.model.Meal
-import com.example.recetas_2.presentation.Result
+import com.example.recetas_2.data.Result
 import javax.inject.Inject
 import javax.inject.Singleton
 
